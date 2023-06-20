@@ -42,12 +42,12 @@ export async function POST(req: Request): Promise<Response> {
 
   // remove line breaks,
   // remove trailing slash,
-  // remove "🤖..." if present
+  // remove "✍..." if present
   // limit to 5000 characters
   content = content
     .replace(/\n/g, " ")
     .replace(/\/$/, "")
-    .replace("🤖...", "")
+    .replace("✍...", "")
     .slice(0, 5000);
 
   const response = await openai.createChatCompletion({
@@ -56,16 +56,16 @@ export async function POST(req: Request): Promise<Response> {
       {
         role: "system",
         content:
-          "You are an AI writing assistant that continues existing text based on context from prior text. " +
-          "Give more weight/priority to the later characters than the beginning ones.",
+          "你是一名AI写作助手，根据先前文本的上下文续写现有文本。请判断先前文本的创作主体，并代入到这个创作主体的身份，你将作为先前文本的创作主体并且根据先前文本描述来进行续写，注意语言风格、情感表达要与先前文本相同，逻辑要与先前文本接续。注意不是在进行对话，而是在续写文本。举个例子：假如先前文本是“你好小明，这是我第一次给你写信，你过得好吗？”这个先前文本的创作主体是“我”（我在给小明写信），你必须代入到“我”这个角色中，接着给小明，也就是“你”写信。 " +
+          "给予后面的字符比开头字符更多的权重和优先级。",
       },
       {
         role: "user",
         content,
       },
     ],
-    max_tokens: 50,
-    temperature: 0.7,
+    max_tokens: 120,
+    temperature: 0.8,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
