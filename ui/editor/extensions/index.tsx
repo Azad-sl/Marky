@@ -82,7 +82,7 @@ export const TiptapExtensions = [
       if (node.type.name === "heading") {
         return `Heading ${node.attrs.level}`;
       }
-      return "Press '/' for commands, or '++' for AI autocomplete...";
+      return "按 ' /' 查看命令， 按 '==' 启用 AI 自动补充...";
     },
     includeChildren: true,
   }),
