@@ -113,7 +113,7 @@ const DEFAULT_EDITOR_CONTENT = {
                   { type: "text", text: " + " },
                   { type: "text", marks: [{ type: "code" }], text: " / " },
                   { type: "text", text: " 查看帮助；输入 " },
-                  { type: "text", marks: [{ type: "code" }], text: " ++ " },
+                  { type: "text", marks: [{ type: "code" }], text: " == " },
                   { type: "text", text: " 调用 AI 提供补充。" },
                 ],
               },
