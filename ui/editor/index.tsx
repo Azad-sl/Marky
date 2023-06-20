@@ -43,12 +43,12 @@ export default function Editor() {
         selection.from,
         "\n",
       );
-      if (lastTwo === "++" && !isLoading) {
+      if (lastTwo === "==" && !isLoading) {
         e.editor.commands.deleteRange({
           from: selection.from - 2,
           to: selection.from,
         });
-        e.editor.commands.insertContent("🤖...");
+        e.editor.commands.insertContent("✍...");
         complete(e.editor.getText());
         va.track("Autocomplete Shortcut Used");
       } else {
@@ -75,7 +75,7 @@ export default function Editor() {
       });
     },
     onError: () => {
-      toast.error("Something went wrong.");
+      toast.error("API调用限制，请稍后重试.");
     },
   });
 
@@ -83,17 +83,17 @@ export default function Editor() {
 
   // Insert chunks of the generated text
   useEffect(() => {
-    // remove 🤖... and insert the generated text
+    // remove ✍... and insert the generated text
     if (
       completion.length > 0 &&
       editor?.state.doc.textBetween(
-        editor.state.selection.from - 5,
+        editor.state.selection.from - 4,
         editor.state.selection.from,
         "\n",
-      ) === "🤖..."
+      ) === "✍..."
     ) {
       editor?.commands.deleteRange({
-        from: editor.state.selection.from - 5,
+        from: editor.state.selection.from - 4,
         to: editor.state.selection.from,
       });
     }
@@ -108,7 +108,7 @@ export default function Editor() {
 
   useEffect(() => {
     // if user presses escape or cmd + z and it's loading,
-    // stop the request, delete the completion, and insert back the "++"
+    // stop the request, delete the completion, and insert back the "=="
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" || (e.metaKey && e.key === "z")) {
         stop();
@@ -118,7 +118,7 @@ export default function Editor() {
             to: editor.state.selection.from,
           });
         }
-        editor?.commands.insertContent("++");
+        editor?.commands.insertContent("==");
       }
     };
     if (isLoading) {
