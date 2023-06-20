@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 
 export const cal = localFont({
-  src: "./CalSans-SemiBold.otf",
+  src: "./xwwk.subset.ttf",
   variable: "--font-cal",
 });
 
