@@ -138,7 +138,7 @@ const DEFAULT_EDITOR_CONTENT = {
               {
                 type: "paragraph",
                 content: [
-                  { type: "text", text: "方便自主创作，但请勿过分依赖AI生成功能（调用过快会显示【稍后重试】）。" },
+                  { type: "text", text: "AI会根据前文进行联想补充，方便自主创作，但请勿过于依赖AI生成功能（调用过快会显示【稍后重试】）。" },
                 ],
               },
             ],
