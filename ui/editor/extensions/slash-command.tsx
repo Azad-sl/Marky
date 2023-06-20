@@ -72,34 +72,12 @@ const getSuggestionItems = ({ query }: { query: string }) => {
   return [
     {
       title: "Continue writing",
-      description: "Use AI to expand your thoughts.",
+      description: "使用 AI 扩展你的思维.",
       icon: <Magic className="w-7 text-black" />,
     },
     {
-      title: "Send Feedback",
-      description: "Let us know how we can improve.",
-      icon: <MessageSquarePlus size={18} />,
-      command: ({ editor, range }: Command) => {
-        editor.chain().focus().deleteRange(range).run();
-        window.open("/feedback", "_blank");
-      },
-    },
-    {
-      title: "Text",
-      description: "Just start typing with plain text.",
-      icon: <Text size={18} />,
-      command: ({ editor, range }: Command) => {
-        editor
-          .chain()
-          .focus()
-          .deleteRange(range)
-          .toggleNode("paragraph", "paragraph")
-          .run();
-      },
-    },
-    {
       title: "Heading 1",
-      description: "Big section heading.",
+      description: "大标题.",
       icon: <Heading1 size={18} />,
       command: ({ editor, range }: Command) => {
         editor
@@ -112,7 +90,7 @@ const getSuggestionItems = ({ query }: { query: string }) => {
     },
     {
       title: "Heading 2",
-      description: "Medium section heading.",
+      description: "中标题.",
       icon: <Heading2 size={18} />,
       command: ({ editor, range }: Command) => {
         editor
@@ -125,7 +103,7 @@ const getSuggestionItems = ({ query }: { query: string }) => {
     },
     {
       title: "Heading 3",
-      description: "Small section heading.",
+      description: "小标题.",
       icon: <Heading3 size={18} />,
       command: ({ editor, range }: Command) => {
         editor
@@ -138,7 +116,7 @@ const getSuggestionItems = ({ query }: { query: string }) => {
     },
     {
       title: "Bold",
-      description: "Make text bold.",
+      description: "加粗文本.",
       icon: <Bold size={18} />,
       command: ({ editor, range }: Command) => {
         editor.chain().focus().deleteRange(range).setMark("bold").run();
@@ -146,7 +124,7 @@ const getSuggestionItems = ({ query }: { query: string }) => {
     },
     {
       title: "Italic",
-      description: "Make text italic.",
+      description: "倾斜文本.",
       icon: <Italic size={18} />,
       command: ({ editor, range }: Command) => {
         editor.chain().focus().deleteRange(range).setMark("italic").run();
@@ -154,7 +132,7 @@ const getSuggestionItems = ({ query }: { query: string }) => {
     },
     {
       title: "Bullet List",
-      description: "Create a simple bullet list.",
+      description: "创建无序列表.",
       icon: <List size={18} />,
       command: ({ editor, range }: Command) => {
         editor.chain().focus().deleteRange(range).toggleBulletList().run();
@@ -162,7 +140,7 @@ const getSuggestionItems = ({ query }: { query: string }) => {
     },
     {
       title: "Numbered List",
-      description: "Create a list with numbering.",
+      description: "创建有序列表.",
       icon: <ListOrdered size={18} />,
       command: ({ editor, range }: Command) => {
         editor.chain().focus().deleteRange(range).toggleOrderedList().run();
@@ -223,7 +201,7 @@ const CommandList = ({
       });
     },
     onError: () => {
-      toast.error("Something went wrong.");
+      toast.error("API调用限制，请稍后重试.");
     },
   });
 
