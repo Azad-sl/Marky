@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import { Toaster } from "sonner";
 
 const title =
-  "Marky";
+  "Marky - GPT驱动的极简概念编辑器";
 const description =
   "Marky is a Notion-style WYSIWYG editor with AI-powered autocompletions. Built with Tiptap, OpenAI, and Vercel AI SDK.";
 
