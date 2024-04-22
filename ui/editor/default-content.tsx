@@ -167,23 +167,23 @@ const DEFAULT_EDITOR_CONTENT = {
                       {
                         type: "link",
                         attrs: {
-                          href: "https://t.zsxq.com/0cy1WzxXu",
+                          href: "https://other.azad.asia",
                           target: "_blank",
                           class:
                             "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
                         },
                       },
                     ],
-                    text: "不止GPT",
+                    text: "实验室",
                   },
-                  { type: "text", text: " 星球群。如果你喜欢这个小工具，欢迎对我进行" },
+                  { type: "text", text: " 。如果你喜欢这个小工具，欢迎对我进行" },
                    {
                     type: "text",
                     marks: [
                       {
                         type: "link",
                         attrs: {
-                          href: "http://www.azad.asia/dashang/",
+                          href: "http://www.aihub.ren/dashang/",
                           target: "_blank",
                           class:
                             "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
